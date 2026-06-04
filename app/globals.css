@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --color-gold: #D4AF37;
+  --color-gold-hover: #f1c40f;
+  --color-emerald: #10b981;
+  --color-emerald-dark: #0F2C24;
+  --color-cyan: #06b6d4;
+  --font-sans: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: #060d0a;
+  color: #f3f4f6;
+  min-height: 100dvh;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #060d0a; }
+::-webkit-scrollbar-thumb { background: #1d302a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+.glass-card {
+  background: rgba(18, 38, 32, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.status-BOOKED         { background: rgba(99,102,241,0.15);  color: #818cf8; border-color: rgba(99,102,241,0.3); }
+.status-RIDER_ASSIGNED { background: rgba(6,182,212,0.15);   color: #22d3ee; border-color: rgba(6,182,212,0.3); }
+.status-PICKED_UP      { background: rgba(245,158,11,0.15);  color: #fbbf24; border-color: rgba(245,158,11,0.3); }
+.status-INWARDED       { background: rgba(249,115,22,0.15);  color: #fb923c; border-color: rgba(249,115,22,0.3); }
+.status-CUTTING        { background: rgba(236,72,153,0.15);  color: #f472b6; border-color: rgba(236,72,153,0.3); }
+.status-STITCHING      { background: rgba(139,92,246,0.15);  color: #a78bfa; border-color: rgba(139,92,246,0.3); }
+.status-QA_CHECK       { background: rgba(234,179,8,0.15);   color: #fde047; border-color: rgba(234,179,8,0.3); }
+.status-DISPATCHED     { background: rgba(20,184,166,0.15);  color: #2dd4bf; border-color: rgba(20,184,166,0.3); }
+.status-DELIVERED      { background: rgba(16,185,129,0.15);  color: #34d399; border-color: rgba(16,185,129,0.3); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.4s ease forwards; }
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(212,175,55,0.3); }
+  50%       { box-shadow: 0 0 20px rgba(212,175,55,0.6); }
+}
+.glow-pulse { animation: glowPulse 2s ease-in-out infinite; }
